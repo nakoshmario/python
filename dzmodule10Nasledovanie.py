@@ -77,33 +77,34 @@
 
 
 
-class Money:
-    def __init__(self,name='', sotni='',edin='',copeika=''):
-        self.name = name
-        self.sotni=sotni
-        self.edin=edin
-        self.copeika=copeika
-    def money_show(self):
-        print('название монеты и ее количество')
-class Euro(Money):
-    def __init__(self, name='', sotni='', edin='', copeika='',country=''):
-        super().__init__(name, sotni, edin, copeika)
-        self.country = country
-    def euro_show(self):
-        print(f'название валюты {self.name},количество:{self.sotni} сотен {self.edin} десятков и {self.copeika} евроцентов используются в стране {self.country}')
-class Dollar(Money):
-    def __init__(self, name='', sotni='', edin='', copeika='',country=''):
-        super().__init__(name, sotni, edin, copeika)
-        self.country = country
-    def dollar_show(self):
-        print(f'название валюты {self.name},количество:{self.sotni} сотен {self.edin} десятков и {self.copeika} центов используются в стране {self.country}')
-class Rubles(Money):
-    def __init__(self, name='', sotni='', edin='', copeika='',country=''):
-        super().__init__(name, sotni, edin, copeika)
-        self.country = country
-    def rubles_show(self):
-        print(f'название валюты {self.name},количество:{self.sotni} сотен {self.edin} десятков и {self.copeika} копеек используются в стране {self.country}')
-money = Money()
-Euro('евро','200','10','50','Евросоюз').euro_show()
-Dollar('доллар','150','50','20','Америка').dollar_show()
-Rubles('рубль','500','50','10','Россия').rubles_show()
+# class Money:
+#     def __init__(self,name='', sotni='',edin='',copeika=''):
+#         self.name = name
+#         self.sotni=sotni
+#         self.edin=edin
+#         self.copeika=copeika
+#     def money_show(self):
+#         print('название монеты и ее количество')
+# class Euro(Money):
+#     def __init__(self, name='', sotni='', edin='', copeika='',country=''):
+#         super().__init__(name, sotni, edin, copeika)
+#         self.country = country
+#     def euro_show(self):
+#         print(f'название валюты {self.name},количество:{self.sotni} сотен {self.edin} десятков и {self.copeika} евроцентов используются в стране {self.country}')
+# class Dollar(Money):
+#     def __init__(self, name='', sotni='', edin='', copeika='',country=''):
+#         super().__init__(name, sotni, edin, copeika)
+#         self.country = country
+#     def dollar_show(self):
+#         print(f'название валюты {self.name},количество:{self.sotni} сотен {self.edin} десятков и {self.copeika} центов используются в стране {self.country}')
+# class Rubles(Money):
+#     def __init__(self, name='', sotni='', edin='', copeika='',country=''):
+#         super().__init__(name, sotni, edin, copeika)
+#         self.country = country
+#     def rubles_show(self):
+#         print(f'название валюты {self.name},количество:{self.sotni} сотен {self.edin} десятков и {self.copeika} копеек используются в стране {self.country}')
+# money = Money()
+# Euro('евро','200','10','50','Евросоюз').euro_show()
+# Dollar('доллар','150','50','20','Америка').dollar_show()
+# Rubles('рубль','500','50','10','Россия').rubles_show()
+
