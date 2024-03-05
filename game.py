@@ -22,11 +22,15 @@ def main():
     while True:
             try:
                 row = int(input('введите номер строки: '))
-                if row < 0 or row >= game.field_size                        
+                if row < 0 or row >= game.field_size:                    
                  raise FieldIndexError
                 column = int(input('введите номер столбика: '))
                 if  column < 0 or column >= game.field_size:
                     raise FieldIndexError
+                game.make_move(row, column, 'X')
+                print('Move made!')
+                game.display()
+
      
             except FieldIndexError:
                 print("неверный формат ввода")
