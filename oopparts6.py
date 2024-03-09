@@ -82,57 +82,68 @@
 # print('-----------------')
 
 
-
 class Shape:
-    def __init__(self,name=''):
+    def __init__(self, name):
         self.name = name
 
-    def show(self):
-        return f"Я {self.name}"
-    def save(self,file_name):
-        with open(file_name,'w') as file:
-            file.write(self.show())
- 
+    def draw(self, filename):
+        with open(filename, "w", encoding="utf-8") as file:
+            for line in self.get_lines():
+                line = ['*' for _ in line]
+                file.write(" ".join(line) + "\n")
+            file.write(f"{self.name}\n")
+    def figury_show(self):
+        f'{self.name} - фигура'
 
-
+    def get_lines(self):
+        raise NotImplementedError
 
 class Square(Shape):
-    def __init__(self, x, y, side, name=''):
+    def __init__(self, x, y, side, name):
         super().__init__(name)
         self.x = x
         self.y = y
         self.side = side
 
-    def loadd(self):
-        return f"Сquare: x={self.x}, y={self.y}, side={self.side}"
-class Rectangle(Shape):
-    def __init__(self, x, y, width, height, name=''):
+    def get_lines(self):
+        lines = []
+        for i in range(self.side):
+            line = []
+            for j in range(self.side):
+                line.append('*')
+            lines.append(line)
+        return lines
+
+class Triangle(Shape):
+    def __init__(self, x, y, width, height, name):
         super().__init__(name)
         self.x = x
         self.y = y
         self.width = width
         self.height = height
 
-    def loadd(self):
-        return f"Rectangle: x={self.x}, y={self.y}, width={self.width}, height={self.height}"
-class Circle(Shape):
-    def __init__(self, x, y, radius, name=''):
-        super().__init__(name)
-        self.x = x
-        self.y = y
-        self.radius = radius
+    def get_lines(self):
+        lines = []
+        for i in range(self.height):
+            line = []
+            for j in range(i + 1):
+                line.append('*')
+            lines.append(line)
+        return lines
 
-    def loadd(self):
-        return f"Circle: x={self.x}, y={self.y}, radius={self.radius}"
-class Ellipse(Shape):
-    def __init__(self, x, y, semi_axis_1, semi_axis_2, name=''):
-        super().__init__(name)
-        self.x = x
-        self.y = y
-        self.semi_axis_1 = semi_axis_1
-        self.semi_axis_2 = semi_axis_2
 
-    def loadd(self):
-        return f"Ellipse: x={self.x}, y={self.y}, semi_axis_1={self.semi_axis_1}, semi_axis_2={self.semi_axis_2}"
-            
+square = Square(10, 21, 10, "квадрат-- последнияя цифра опеределяет размер  стороны квадрата")
 
+
+square.draw('square.txt')
+
+
+triangle = Triangle(10, 5, 10, 15, "треугольник --  последние две цифры определяют размер у треугольника")
+
+
+triangle.draw('triangle.txt')
+
+
+
+    
+       
