@@ -40,3 +40,40 @@
 # find_primes(100, 500)
 
 
+# отчеты разных организация по финансам с помощью декораторов
+
+def finance_otchet():
+    return []
+
+def company_run(func):
+    def wraper():
+        res = func()
+        res.append('январь -100')
+        res.append('ферваль -400')
+        res.append('март -100')
+        res.append('апрель -100')
+        res.append('май -100')
+        res.append('июнь-1300') 
+        return res
+    return wraper
+@company_run
+def company_run():
+    return  finance_otchet()
+
+print('финансовый отчет компании за первое полугодие "run"',company_run())
+
+def air_company(func):
+    def wraper():
+        res = func()
+        res.append('январь -300')
+        res.append('февраль -500')
+        res.append('март -8100')
+        res.append('апрель -900')
+        res.append('май -1000')
+        res.append('июнь -500')
+        return res
+    return wraper
+@air_company
+def air_company():
+    return finance_otchet()
+print('финансовый отчет за первое полугодие компании "air"',air_company())
