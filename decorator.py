@@ -77,3 +77,24 @@ def air_company(func):
 def air_company():
     return finance_otchet()
 print('финансовый отчет за первое полугодие компании "air"',air_company())
+
+def  bank(func):
+    def wraper():
+        res = func()
+        res.append('июль-8000')
+        res.append('август-18000')
+        res.append('сентябрь-28000')
+        res.append('октябрь-80000')
+        res.append('ноябрь-5000')
+        res.append('декабрь-4000')
+        return res
+    return wraper
+
+@bank
+def bank():
+    return finance_otchet()
+
+print('финаансовый отчет банка за второе полугодтие:',bank())
+
+    
+
