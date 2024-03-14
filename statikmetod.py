@@ -56,4 +56,28 @@ class TemperatureConverter:
 # print(test2.f_c(78),'фарингейт в цельсии')
 # print( TemperatureConverter.test())
 # --------------------------------------------
-   
+
+
+class Metrica:
+    count = 0
+    def __init__(self):
+        Metrica.count+=1
+    
+    @staticmethod
+    def km_v_mil(a):
+        res = a * 0.67
+        return res
+    @staticmethod
+    def mil_v_km(b):
+        res = b / 0.67
+        return res
+    @staticmethod
+    def test():
+        return Metrica.count
+    
+
+test1 = Metrica()
+
+print(test1.km_v_mil(50), 'километров в мили')
+print(test1.mil_v_km(50), 'миль в километры')
+print(Metrica.test())
