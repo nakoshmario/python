@@ -63,13 +63,13 @@ scissors_button.pack()
 
 def game(user_choice):
     computer_choice = random.choice(["камень", "бумага", "ножницы"])
-    result = decide_winner(user_choice, computer_choice)
+    result = opciton_winner(user_choice, computer_choice)
     message = f"вы выбрали {user_choice.capitalize()}.\n компуктер выбрал {computer_choice.capitalize()}.\n{result}"
     result_label = tk.Label(root, text=message)
     result_label.pack()
 
 
-def decide_winner(user, computer):
+def opciton_winner(user, computer):
     if user == computer:
         return "ничья!"
     elif (user == "камень" and computer == "ножницы") or \
