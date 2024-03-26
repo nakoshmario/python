@@ -89,9 +89,5 @@ s.peek()
 {[()]}
 
 '''
-def is_correct_bracket_seq():
-    bracket_sequence = input().strip()
-
-    
-    for i in bracket_sequence :
- 
+def is_correct_bracket_seq()
+   
