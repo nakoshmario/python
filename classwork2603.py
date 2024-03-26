@@ -89,5 +89,5 @@ s.peek()
 {[()]}
 
 '''
-def is_correct_bracket_seq()
+# def is_correct_bracket_seq
    
